@@ -1,0 +1,38 @@
+
+# 公共参数设置
+self.USE_CUDA           = torch.cuda.is_available()  # GPU是否可用
+self.RUNNING_ON_SERVER  = False                      # 代码运行在本地还是服务器
+self.NET_SAVE_PATH      = "./source/trained_net/"    # 训练好的网络的储存位置
+self.TRAIN_DATASET_PATH = "../test_train/xx.txt"     # 训练集位置
+self.TEST_DATASET_PATH  = "../test_train/xx.txt"     # 测试集位置
+self.NUM_EPOCHS         = 1000                       # 本次Epoch数目
+self.BATCH_SIZE         = 32                         # 每批数据大小
+self.TOP_NUM            = 4                          # 测试时需求前几的Acc
+self.NUM_WORKERS        = 4                          # pytorch用几个线程工作读数据
+self.IS_TRAINING        = True                       # 选择模式“训练”或“测试”
+self.ENSEMBLE_TEST      = False                      # 测试模式下是否需要模型融合测试
+self.LEARNING_RATE      = 0.001                      # 学习率
+self.RE_TRAIN           = False                      # 本次训练是否要加载之前训练好的模型
+self.TEST_POSITION      = 'Gangge Server'            # 本次训练运行在哪里
+
+# 模型共享参数设置
+self.OPTIMIZER          = 'Adam'                     # 优化器选择
+self.USE_CHAR           = True                       # 使用char还是词
+self.USE_WORD2VEC       = True                       # 使用词语时是否使用词向量
+self.NUM_CLASSES        = 1890                       # 本次训练的分类数
+self.EMBEDDING_DIM      = 512                        # 词嵌入的维度
+self.VOCAB_SIZE         = 20029                      # 生成的词库大小
+self.CHAR_SIZE          = 3403                       # 生成的字库大小
+
+# LSTM模型设置
+self.LSTM_HID_SIZE      = 512                        # 中间层维度
+self.LSTM_LAYER_NUM     = 2                          # LSTM层数
+
+# TextCNN模型设置
+self.TITLE_DIM          = 200                        # 中间层维度
+self.SENT_LEN           = 20                         # 句子截断长度
+self.LINER_HID_SIZE     = 2000                       # fc中间层维度
+self.KERNEL_SIZE        = [1,2,3,4,5]                # 卷积核大小
+
+# DilaTextCNN模型设置
+self.DILA_TITLE_DIM     = 20                         # 中间层维度
